@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from luminosity.models import Luminosity
+from .models import Luminosity
 
 
 @admin.register(Luminosity)
