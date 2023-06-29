@@ -8,4 +8,4 @@ class LuminosityFilter(GeoFilterSet):
 
     class Meta:
         model = Luminosity
-        fields = ("name", "date", "capteur", "intensite")
+        fields = ("name", "date", "room_id", "intensite")

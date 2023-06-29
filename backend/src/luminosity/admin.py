@@ -9,6 +9,6 @@ class LuminosityAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "date",
-        "capteur",
+        "room_id",
         "intensite",
     )
