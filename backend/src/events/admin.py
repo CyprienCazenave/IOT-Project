@@ -5,7 +5,7 @@ from .models import Events
 
 
 @admin.register(Events)
-class CoursAdmin(admin.ModelAdmin):
+class EventsAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "salle_id",

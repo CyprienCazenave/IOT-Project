@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .models import Events
 from .filters import EventsFilter
-from .serializers import EventsSerializer, MoveListSerializer
+from .serializers import EventsSerializer, EventsListSerializer
 
 
 class EventsViewSet(

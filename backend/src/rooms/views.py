@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .models import Room
 from .filters import RoomFilter
-from .serializers import RoomSerializer, MoveListSerializer
+from .serializers import RoomSerializer, RoomListSerializer
 
 
 class RoomViewSet(
@@ -29,7 +29,7 @@ class RoomViewSet(
     def get_serializer_class(self):
         if self.action == "retrieve":
             return RoomSerializer
-        return MoveListSerializer
+        return RoomListSerializer
 
     def create(self, request, *args, **kwargs):
         """
