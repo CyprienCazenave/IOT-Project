@@ -3,33 +3,33 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 
-from .models import Temperatures
-from .filters import TemperatureFilter
-from .serializers import TemperatureSerializer, TemperatureListSerializer
+from .models import Sounds
+from .filters import SoundsFilter
+from .serializers import SoundSerializer, SoundListSerializer
 
 
-class TemperatureViewSet(
+class SoundViewSet(
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = TemperatureFilter
-    queryset = Temperatures.objects.all()
+    filterset_class = SoundsFilter
+    queryset = Sounds.objects.all()
 
     def get_queryset(self):
         """
         Get all the companies related to the authenticated user.
         """
         if self.request.user.is_superuser:
-            return Temperatures.objects.all()
-        return Temperatures.objects.filter()
+            return Sounds.objects.all()
+        return Sounds.objects.filter()
 
     def get_serializer_class(self):
         if self.action == "retrieve":
-            return TemperatureSerializer
-        return TemperatureListSerializer
+            return SoundSerializer
+        return SoundListSerializer
 
     def create(self, request, *args, **kwargs):
         """
