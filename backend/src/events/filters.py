@@ -2,7 +2,8 @@ from rest_framework_gis.filterset import GeoFilterSet
 
 from .models import Events
 
-class CoursFilter(GeoFilterSet):
+
+class EventsFilter(GeoFilterSet):
 
     class Meta:
         model = Events
