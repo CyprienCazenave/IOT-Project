@@ -9,3 +9,5 @@ class Move(TimeStampedModel):
     date = models.DateField()
     room_id = models.CharField(max_length=255, null=True, blank=True)
     nb_person = models.CharField(max_length=45, null=True, blank=True)
+
+
