@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .models import Cours
 from .filters import CoursFilter
-from .serializers import CoursSerializer, MoveListSerializer
+from .serializers import CoursSerializer, CoursListSerializer
 
 
 class CoursViewSet(

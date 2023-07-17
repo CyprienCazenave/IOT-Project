@@ -1,10 +1,10 @@
 from rest_framework_gis.filterset import GeoFilterSet
 
-from .models import Temperature
+from .models import Temperatures
 
 
-class MoveFilter(GeoFilterSet):
+class TemperatureFilter(GeoFilterSet):
 
     class Meta:
-        model = Temperature
+        model = Temperatures
         fields = ("id", "salle_id", "temperature")
