@@ -1,6 +1,7 @@
 from rest_framework_gis.filterset import GeoFilterSet
 
-from .models import Cours 
+from .models import Cours
+
 
 class CoursFilter(GeoFilterSet):
 
