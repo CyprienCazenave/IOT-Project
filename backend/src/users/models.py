@@ -8,5 +8,5 @@ class User(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
     nom = models.CharField(max_length=255, null=True, blank=True)
     prenom = models.CharField(max_length=255, null=True, blank=True)
-    email = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
     password = models.CharField(max_length=255, null=True, blank=True)

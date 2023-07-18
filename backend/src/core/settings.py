@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "rest_framework_gis",
+    "django_filters",
     # project
+    "cours",
+    "events",
+    "luminosity",
+    "moves",
+    "rooms",
+    "sounds",
+    "temperatures",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -79,7 +88,7 @@ WSGI_APPLICATION = 'ProjectIOT.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2	',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ProjectIOT',
         'USER': 'user',
         'PASSWORD': 'password',

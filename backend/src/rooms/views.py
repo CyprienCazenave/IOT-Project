@@ -19,9 +19,6 @@ class RoomViewSet(
     queryset = Room.objects.all()
 
     def get_queryset(self):
-        """
-        Get all the companies related to the authenticated user.
-        """
         if self.request.user.is_superuser:
             return Room.objects.all()
         return Room.objects.filter()

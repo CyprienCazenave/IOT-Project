@@ -19,9 +19,6 @@ class MoveViewSet(
     queryset = Move.objects.all()
 
     def get_queryset(self):
-        """
-        Get all the companies related to the authenticated user.
-        """
         if self.request.user.is_superuser:
             return Move.objects.all()
         return Move.objects.filter()

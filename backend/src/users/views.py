@@ -19,9 +19,6 @@ class UserViewSet(
     queryset = User.objects.all()
 
     def get_queryset(self):
-        """
-        Get all the companies related to the authenticated user.
-        """
         if self.request.user.is_superuser:
             return User.objects.all()
         return User.objects.filter()
