@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "rest_framework_gis",
     "django_filters",
+    "django_extensions",
     # project
     "cours",
     "events",
@@ -89,11 +90,11 @@ WSGI_APPLICATION = 'ProjectIOT.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ProjectIOT',
-        'USER': 'user',
-        'PASSWORD': 'password',
+        'NAME': 'projectiot',
+        'USER': 'project',
+        'PASSWORD': 'project',
         'HOST': '127.0.0.1',
-        'PORT': '1234',
+        'PORT': '5432',
     }
 }
 

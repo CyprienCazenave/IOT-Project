@@ -17,10 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path, reverse_lazy
-from django.views.generic import TemplateView
-from django.views.generic.base import RedirectView
 from rest_framework import routers
-from rest_framework.schemas import get_schema_view
 import sys
 
 from cours.views import CoursViewSet
