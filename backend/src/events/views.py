@@ -19,9 +19,6 @@ class EventsViewSet(
     queryset = Events.objects.all()
 
     def get_queryset(self):
-        """
-        Get all the companies related to the authenticated user.
-        """
         if self.request.user.is_superuser:
             return Events.objects.all()
         return Events.objects.filter()

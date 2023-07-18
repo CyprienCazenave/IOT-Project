@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Luminosity
-from .filters import LuminosityFilter
+from filters import LuminosityFilter
 from .serializers import LuminositySerializer, LuminosityListSerializer
 from django.db.models import Q
 
@@ -19,9 +19,7 @@ class LuminosityViewSet(
     queryset = Luminosity.objects.all()
 
     def get_queryset(self):
-        """
-        Get all the companies related to the authenticated user.
-        """
+
         if self.request.user.is_superuser:
             return Luminosity.objects.all()
         return Luminosity.objects.filter()
