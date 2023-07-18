@@ -41,6 +41,15 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "rest_framework_gis",
     # project
+    "django_filters",
+    "cours",
+    "events",
+    "luminosity",
+    "moves",
+    "rooms",
+    "sounds",
+    "temperatures",
+    "users",
 ]
 
 MIDDLEWARE = [
