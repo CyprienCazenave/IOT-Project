@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ProjectIOT.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
