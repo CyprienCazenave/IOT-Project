@@ -29,16 +29,6 @@ class CoursViewSet(
         return CoursListSerializer
 
     def create(self, request, *args, **kwargs):
-        """
-        Some geometries are so huge that they can't pass through the GET parameter.
-        That's why we allow the client to filter the API passing the URL parameters in
-        a POST request.
-
-        :param request:
-        :param args:
-        :param kwargs:
-        :return:
-        """
         f = self.filterset_class(request.data, self.get_queryset())
         serializer = self.get_serializer(f.qs, many=True)
         return Response(serializer.data)

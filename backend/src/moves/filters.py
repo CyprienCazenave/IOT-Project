@@ -7,4 +7,4 @@ class MoveFilter(GeoFilterSet):
 
     class Meta:
         model = Move
-        fields = ("name", "date", "room_id", "nb_person")
+        fields = ("date", "room_id", "nb_person")
