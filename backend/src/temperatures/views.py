@@ -14,7 +14,7 @@ class TemperatureViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = TemperatureFilter
     queryset = Temperatures.objects.all()
 

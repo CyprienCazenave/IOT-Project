@@ -14,7 +14,7 @@ class LuminosityViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = LuminosityFilter
     queryset = Luminosity.objects.all()
 

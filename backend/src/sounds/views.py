@@ -14,7 +14,7 @@ class SoundViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = SoundsFilter
     queryset = Sounds.objects.all()
 

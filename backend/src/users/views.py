@@ -14,7 +14,7 @@ class UserViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = UserFilter
     queryset = User.objects.all()
 
