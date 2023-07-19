@@ -9,7 +9,7 @@ then pip install -r requirements.txt
 
 cd backend/src/
 
-python3 manage.py createsuperuser --settings=core.settings
+python3 manage.py createsuperuser --settings=core.settings\n
 python3 manage.py runserver --settings=core.settings
 
 then in the url, write /admin to access admin
