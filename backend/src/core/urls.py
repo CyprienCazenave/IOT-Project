@@ -51,6 +51,10 @@ ROUTER.register(r"temperature", TemperatureViewSet, basename="temperature")
 
 
 urlpatterns = [
+    # Wire up our API using automatic URL routing.
+    # rest_framework api routing
+    path("api/", include(routers.url)),
+    # This requires login for put/update while allowing get (read-only) for everyone.
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path('admin/', admin.site.urls),
 ]
