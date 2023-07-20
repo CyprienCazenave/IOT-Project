@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Events
-from .filters import EventsFilter
 from .serializers import EventsSerializer, EventsListSerializer
 
 
@@ -15,7 +14,6 @@ class EventsViewSet(
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = EventsFilter
     queryset = Events.objects.all()
 
     def get_queryset(self):

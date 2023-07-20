@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Move
-from .filters import MoveFilter
 from .serializers import MoveSerializer, MoveListSerializer
 
 
@@ -15,7 +14,6 @@ class MoveViewSet(
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = MoveFilter
     queryset = Move.objects.all()
 
     def get_queryset(self):

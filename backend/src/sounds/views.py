@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Sounds
-from .filters import SoundsFilter
 from .serializers import SoundSerializer, SoundListSerializer
 
 
@@ -15,7 +14,6 @@ class SoundViewSet(
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = SoundsFilter
     queryset = Sounds.objects.all()
 
     def get_queryset(self):

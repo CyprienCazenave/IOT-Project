@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Cours
-from .filters import CoursFilter
 from .serializers import CoursSerializer, CoursListSerializer
 
 
@@ -15,7 +14,6 @@ class CoursViewSet(
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = CoursFilter
     queryset = Cours.objects.all()
 
     def get_queryset(self):

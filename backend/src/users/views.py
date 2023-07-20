@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import User
-from .filters import UserFilter
 from .serializers import UserSerializer, UserListSerializer
 
 
@@ -15,7 +14,6 @@ class UserViewSet(
     viewsets.GenericViewSet,
 ):
     permission_classes = IsAuthenticated
-    filterset_class = UserFilter
     queryset = User.objects.all()
 
     def get_queryset(self):
