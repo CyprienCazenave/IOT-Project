@@ -13,7 +13,7 @@ class RoomViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     queryset = Room.objects.all()
 
     def get_queryset(self):

@@ -14,7 +14,7 @@ class MoveViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = MoveFilter
     queryset = Move.objects.all()
 

@@ -14,7 +14,7 @@ class CoursViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = CoursFilter
     queryset = Cours.objects.all()
 

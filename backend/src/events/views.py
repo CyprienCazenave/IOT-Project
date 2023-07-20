@@ -14,7 +14,7 @@ class EventsViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     filterset_class = EventsFilter
     queryset = Events.objects.all()
 
