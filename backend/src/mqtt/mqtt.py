@@ -1,5 +1,13 @@
 import paho.mqtt.client as mqtt
 import json
+from django.conf import settings
+from backend.src.luminosity.models import Luminosity
+from backend.src.temperatures.models import Temperatures
+from backend.src.moves.models import Move
+from backend.src.sounds.models import Sounds
+from django.core.management import setup_environ
+from backend.src.core import settings
+setup_environ(settings)
 
 
 # Créer un dictionnaire pour stocker les données des capteurs
@@ -31,12 +39,13 @@ def on_message(client, userdata, msg):
     if msg.topic == "groupe6/packet/a2e7d3e5-eb32-40f3-9ac9-f8863e35ffc9/b4cabb04-2c31-4a69-8840-ac79ac769904/112":
         # Traitement des messages pour le topic 112
         data = json.loads(payload_str)
-        temperature = data["data"]["temperature"]
+        temperaturedata = data["data"]["temperature"]
         # Faites quelque chose avec la température pour le topic 112
         del data["source_address"]  # Supprimer le champ "source_address" des données
         print("Données : " + str(data))
         # Stocker les données dans le dictionnaire
         donnees_capteurs["capteur1"] = data
+        Temperatures.objects.create(temperature=temperaturedata)
 
     elif msg.topic == "groupe6/packet/1df2b39a-8a3c-488c-8c93-361d85367473/96dc697c-e18c-4b63-9c62-667a98fbf517/114":
         # Traitement des messages pour le topic 114
@@ -50,29 +59,36 @@ def on_message(client, userdata, msg):
     elif msg.topic == "groupe6/packet/1df2b39a-8a3c-488c-8c93-361d85367473/478d1826-fad5-490e-a531-ccb7510aefc1/115":
         # Traitement des messages pour le topic 115
         data = json.loads(payload_str)
+        moves = data["data"]["motion"]
         # Effectuez d'autres opérations avec les données du topic 115
         del data["source_address"]  # Supprimer le champ "source_address" des données
         print("Données : " + str(data))
         # Stocker les données dans le dictionnaire
         donnees_capteurs["capteur3"] = data
+        Move.objects.create(nb_person=moves)
+
 
     elif msg.topic == "groupe6/packet/1df2b39a-8a3c-488c-8c93-361d85367473/0ad0bf15-aac9-4595-a3cc-15eafc005f53/118":
         # Traitement des messages pour le topic 118
         data = json.loads(payload_str)
+        luminosity = data["data"]["lux"]
         # Effectuez d'autres opérations avec les données du topic 118
         del data["source_address"]  # Supprimer le champ "source_address" des données
         print("Données : " + str(data))
         # Stocker les données dans le dictionnaire
         donnees_capteurs["capteur4"] = data
+        Luminosity.objects.create(intensite=luminosity)
 
     elif msg.topic == "groupe6/packet/1df2b39a-8a3c-488c-8c93-361d85367473/ca9fdeab-fdcc-4c45-b867-e49eb1fb04a6/119":
         # Traitement des messages pour le topic 119
         data = json.loads(payload_str)
+        sounds = data["data"]["level"]
         # Effectuez d'autres opérations avec les données du topic 119
         del data["source_address"]  # Supprimer le champ "source_address" des données
         print("Données : " + str(data))
         # Stocker les données dans le dictionnaire
         donnees_capteurs["capteur5"] = data
+        Sounds.objects.create(sound=sounds)
 
 
 # Créez un client MQTT
@@ -93,4 +109,3 @@ client.connect("mqtt.arcplex.fr", 2295, 10)
 client.loop_forever()
 
 
-if
