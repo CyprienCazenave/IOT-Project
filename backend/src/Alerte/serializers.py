@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from models import Alerte
+from .models import Alerte
 
 
 class AlerteListSerializer(serializers.ModelSerializer):
