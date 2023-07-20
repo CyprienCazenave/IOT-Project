@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "sounds",
     "temperatures",
     "users",
+    "Alerte",
 ]
 
 MIDDLEWARE = [

@@ -1,15 +1,15 @@
 from rest_framework import serializers
 
-from .models import Alertes
+from .models import Alerte
 
 
-class AlertesListSerializer(serializers.ModelSerializer):
+class AlerteListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Alertes
+        model = Alerte
         fields = ("alert_type", "description", "timestamp","is_resolved")
 
 
-class RoomSerializer(serializers.ModelSerializer):
+class AlerteSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Alertes 
+        model = Alerte
         fields = ("alert_type", "description", "timestamp", "is_resolved")
