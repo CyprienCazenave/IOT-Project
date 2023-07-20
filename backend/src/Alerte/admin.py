@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 
-from .models import Luminosity
+from models import Alerte
 
 
-@admin.register(Luminosity)
+@admin.register(Alerte)
 class LuminosityAdmin(admin.ModelAdmin):
     list_display = (
         "alert_type)",

@@ -28,6 +28,7 @@ from moves.views import MoveViewSet
 from rooms.views import RoomViewSet
 from sounds.views import SoundViewSet
 from temperatures.views import TemperatureViewSet
+from Alerte.views import AlerteViewSet
 
 
 sys.path.append("..")
@@ -48,6 +49,7 @@ ROUTER.register(r"moves", MoveViewSet, basename="move")
 ROUTER.register(r"rooms", RoomViewSet, basename="rooms")
 ROUTER.register(r"sounds", SoundViewSet, basename="sounds")
 ROUTER.register(r"temperature", TemperatureViewSet, basename="temperature")
+ROUTER.register(r"alerte", AlerteViewSet, basename="alerte")
 
 
 urlpatterns = [

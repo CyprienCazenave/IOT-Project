@@ -2,7 +2,8 @@
 
 from django.db import models
 
-class Alert(models.Model):
+
+class Alerte(models.Model):
     ALERT_TYPES = (
         ('Temperature', 'Temperature'),
         # Ajoutez d'autres types d'alerte selon vos besoins
